@@ -1,0 +1,11 @@
+--- Makefile
++++ Makefile
+@@ -65,7 +65,7 @@ OPTIM		=	-g
+ #(BSD is only needed if <sys/params.h> does not define it, as on ULTRIX)
+ #COMPAT		=	-DBSD
+ # (POSIX)
+-#COMPAT		=	-DPOSIX
++COMPAT		=	-DPOSIX
+ #<<lint flags of choice?>>
+ LINTFLAGS	=	-hbxa $(INCLUDE) $(COMPAT) $(DEBUGGING)
+ #<<want to use a nonstandard CC?>>

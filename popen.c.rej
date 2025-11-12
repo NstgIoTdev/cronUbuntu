@@ -1,0 +1,11 @@
+--- popen.c
++++ popen.c
+@@ -29,7 +29,7 @@ static char sccsid[] = "@(#)popen.c	5.7 (Berkeley) 2/14/89";
+ #endif /* not lint */
+ 
+ #include "cron.h"
+-#include <sys/signal.h>
++#include <signal.h>
+ 
+ 
+ #define WANT_GLOBBING 0

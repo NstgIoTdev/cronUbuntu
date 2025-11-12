@@ -1,0 +1,21 @@
+--- do_command.c
++++ do_command.c
+@@ -21,7 +21,8 @@ static char rcsid[] = "$Id: do_command.c,v 2.12 1994/01/15 20:43:43 vixie Exp $"
+ 
+ 
+ #include "cron.h"
+-#include <sys/signal.h>
++#include <signal.h>
++#include <grp.h>
+ #if defined(sequent)
+ # include <sys/universe.h>
+ #endif
+@@ -207,7 +208,7 @@ child_process(e, u)
+ 		 * we set uid, we've lost root privledges.
+ 		 */
+ 		setgid(e->gid);
+-# if defined(BSD)
++# if defined(BSD) || defined(POSIX)
+ 		initgroups(env_get("LOGNAME", e->envp), e->gid);
+ # endif
+ 		setuid(e->uid);		/* we aren't root after this... */
