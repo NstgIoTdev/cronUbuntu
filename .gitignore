@@ -26,3 +26,4 @@ Thumbs.db
 *.img
 *.itb
 *.squashfs
+cron
