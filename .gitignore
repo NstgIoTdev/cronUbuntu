@@ -1,0 +1,28 @@
+# Docker関連
+.dockerignore
+
+# 一般的な除外ファイル
+*.log
+*.tmp
+*~
+*.bak
+
+# OS関連
+.DS_Store
+Thumbs.db
+
+# IDE関連
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ビルド成果物（念のため）
+*.o
+*.a
+*.so
+*.elf
+*.bin
+*.img
+*.itb
+*.squashfs
