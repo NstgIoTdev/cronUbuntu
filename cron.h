@@ -136,7 +136,7 @@
 			 LineNumber = ln; \
 			}
 
-typedef int time_min;
+typedef long time_min;
 
 /* Log levels */
 #define	CRON_LOG_JOBSTART	0x01

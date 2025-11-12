@@ -325,7 +325,7 @@ find_jobs(vtime, db, doWild, doNonWild)
 	int doWild;
 	int doNonWild;
 {
-	time_t   virtualSecond  = vtime * SECONDS_PER_MINUTE;
+	time_t   virtualSecond  = (time_t)vtime * SECONDS_PER_MINUTE;
 	register struct tm	*tm = gmtime(&virtualSecond);
 	register int		minute, hour, dom, month, dow;
 	register user		*u;
@@ -406,7 +406,7 @@ cron_sleep(target)
 
 	t = time(NULL) + GMToff;
 
-	seconds_to_wait = (int)(target * SECONDS_PER_MINUTE - t) + 1;
+	seconds_to_wait = (int)((time_t)target * SECONDS_PER_MINUTE - t) + 1;
 	Debug(DSCH, ("[%d] TargetTime=%ld, sec-to-wait=%d\n",
 	    getpid(), (long)target*SECONDS_PER_MINUTE, seconds_to_wait))
 
